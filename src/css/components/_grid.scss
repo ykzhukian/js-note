@@ -1,0 +1,17 @@
+.grid-container {
+  display: grid;
+  // grid-template-areas: 1fr 100px 1fr;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 100px 1fr;
+
+  .item {
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    span {
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
