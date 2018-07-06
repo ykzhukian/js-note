@@ -4,20 +4,43 @@ body {
 }
 .grid-container {
   display: grid;
+  background-color: #fff;
   // grid-template-areas: 1fr 100px 1fr;
   // grid-template-columns: 1fr 4fr 1fr;
   // grid-template-rows: 1fr 100px 1fr;
-  grid-template-columns: repeat(3, 1fr [col-start]);
-  grid-template-rows: repeat(3, 100px [col-start]);
-  background-color: #fff;
+  // grid-template-columns: repeat(3, 1fr [col-start]);
+  // grid-template-rows: repeat(3, 100px [col-start]);
+  // grid-template-areas: 
+    // 'cool cool .'
+    // 'good . yes';
+  grid-template: 
+    [row1-start] "cool cool ." 200px [row1-end]
+    [row2-start] "good good good" 300px [row2-end] 
+    [row3-start] "yes yes yes" 200px [row3-end] 
+    / 100px 200px 100px;
+
+  grid-gap: 15px;
+
+  justify-items: stretch;
+  align-items: stretch;
+  justify-content: center;
+  border: 10px solid #ddd;
 
   .item {
     text-align: center;
     display: table-cell;
-    vertical-align: middle;
-    align-self: center;
-    span {
-
+    // vertical-align: middle;
+    // align-self: center;
+    background-color: lightblue;
+    
+    &-1 {
+      grid-area: cool;
+    }
+    &-2 {
+      grid-area: good;
+    }
+    &-3 {
+      grid-area: yes;
     }
   }
 }
