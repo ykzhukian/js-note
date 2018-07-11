@@ -9,8 +9,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <Grid />
+      <div className="app">
+        <div className="button">Learn More<span className="arrow"></span></div>
+        {/* <Grid /> */}
       </div>
     )
   }
