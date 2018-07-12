@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -35,7 +36,6 @@ module.exports = {
                 },
                 exclude: /node_modules/
             },
-            
         ]
     },
     mode: 'development',
@@ -43,6 +43,9 @@ module.exports = {
 　　 　　new HtmlWebpackPlugin({
 　　　　    template: path.resolve(__dirname, './src/index.template.html'),
 　　　　    inject: true
-　　　　 })
+　　　　 }),
+        new CopyWebpackPlugin([
+            {from: 'src/data', to: 'data'}
+        ])
 　　 ]
 }
