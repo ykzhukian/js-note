@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Grid from './Grid'
+import ChinaMap from './ChinaMap'
 
 export default class App extends Component {
 
@@ -10,7 +11,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="button">Learn More<span className="arrow"></span></div>
+        <ChinaMap />
+        {/* <div className="button">Learn More<span className="arrow"></span></div> */}
         {/* <Grid /> */}
       </div>
     )
