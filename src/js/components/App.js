@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import Grid from './Grid'
-import Fabric from './Fabric'
-import { fabric } from 'fabric'
+import Switch from './Switch'
 
 export default class App extends Component {
 
@@ -10,18 +8,13 @@ export default class App extends Component {
   }
 
   componentWillMount(){
-    document.title = "A Title"
+    document.title = "Yo"
   }
 
   render() {
     return (
       <div className="app">
-        <div id="map"></div>
-        {/* <canvas className="draw" ref={this.draw}></canvas> */}
-        {/* <canvas id="c"></canvas> */}
-        {/* <div className="button">Learn More<span className="arrow"></span></div> */}
-        {/* <Grid /> */}
-        {/* <Fabric /> */}
+        <Switch />
       </div>
     )
   }
