@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Switch from './Switch'
+import Capsule from './Capsule'
 
 export default class App extends Component {
 
@@ -14,7 +14,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <Switch />
+        {/* <Switch /> */}
+        <Capsule />
       </div>
     )
   }
