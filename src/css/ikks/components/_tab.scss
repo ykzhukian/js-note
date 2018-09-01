@@ -1,0 +1,98 @@
+// Tab
+.tab-head {
+    position: relative;
+    overflow: auto;
+    .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &.tab-head-withbutton {
+        padding-right: 120px;
+    }
+
+    @media only screen and (max-width: $scn-tablet) {
+        margin-left: -15px;
+        margin-right: -15px;
+        .btn {
+            right: 15px;
+            /*display: none;*/
+        }
+        /*&.tab-head-withbutton {
+            padding-right: 0;
+        }*/
+    }
+}
+
+.tab-content {
+
+}
+
+.tab-btn {
+    margin-bottom: 12px;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+
+    .nav-item {
+        font-size: 1.25rem;
+        padding: 0 20px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        .nav-link {
+            display: block;
+			position: relative;
+			text-decoration: none;
+			padding: 5px 0;
+            white-space: nowrap;
+            
+
+            &.active {
+                &:after {
+					@include border-radius(2px);
+					background-color: $red;
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 4px;
+					left: 0;
+					top: 100%;
+				}
+            }
+
+            &:hover {
+				color: $red;
+
+				&:after {
+					@include border-radius(2px);
+					background-color: $red;
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 4px;
+					left: 0;
+					top: 100%;
+				}
+			}
+        }
+    }
+
+    @media only screen and (max-width: $scn-tablet) {
+        .nav-item {
+            font-size: $f-size;
+
+            &:first-child {
+                padding-left: 15px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $scn-mobplus) {
+        .nav-item {
+            font-size: $f-size-s;
+        }
+    }
+}

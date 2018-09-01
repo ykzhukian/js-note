@@ -1,0 +1,55 @@
+// History
+
+.history-intro {
+	font-size: $f-size-l;
+	text-align: center;
+
+	@media only screen and (max-width: $scn-tablet) {
+		font-size: $f-size;
+	}
+}
+
+.history-list {
+	position: relative;
+
+	@media only screen and (max-width: $scn-tablet) {
+		
+	}
+}
+
+.history-block {
+	display: block;
+	position: relative;
+	text-align: center;
+	padding: 45px 0;
+
+	h3 {
+		font-size: $f-size-xl;
+		font-weight: 800;
+		margin-bottom: 30px;
+	}
+
+	p {
+		font-size: 1.25rem;
+		color: $black;
+		margin-bottom: 50px;
+	}
+	
+	img {
+		margin: 0 auto 30px;
+	}
+
+	span {
+		display: block;
+		font-size: $f-size-xs;
+		color: $darkgray;
+	}
+
+	@media only screen and (max-width: $scn-tablet) {
+		padding: 25px 0;
+
+		p {
+			margin-bottom: 30px;
+		}
+	}
+}

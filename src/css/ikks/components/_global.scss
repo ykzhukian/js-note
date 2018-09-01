@@ -1,0 +1,184 @@
+// Global
+
+img{
+    display: block;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    /*max-width: 100%;*/
+    width: 100%;
+    height: auto;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: $place-holder;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $place-holder;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $place-holder;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $place-holder;
+}
+
+*::-moz-selection {
+  background: #DDD;
+  text-shadow: none;
+}
+*::selection {
+  background: #DDD;
+  text-shadow: none;
+}
+
+img::selection {
+  background: transparent;
+  text-shadow: none;
+}
+
+*, *:after, *:before {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+
+/*video {
+  object-fit: contain !important;
+}
+
+video::-webkit-media-controls-toggle-closed-captions-button {
+  display: none;
+}
+
+video::-webkit-media-controls-mute-button {
+  display: none;
+}*/
+
+.lock {
+  overflow: hidden;
+}
+
+.disable, .btn:disabled, [disabled] {
+  @include opacity(0.3);
+}
+
+.hide-tablet {
+  @media only screen and (min-width: $scn-tablet) {
+    display: none;
+  }
+}
+
+.show-tablet {
+  display: none;
+  @media only screen and (min-width: $scn-tablet) {
+    display: block;
+  }
+}
+
+.cover-bg {
+  position: absolute;
+  top: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  margin: auto;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.centerImg {
+  max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+}
+
+.section-title {
+  font-size: $f-size-xxl;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+
+  @media only screen and (max-width: $scn-tablet) {
+    font-size: $f-size-xl;
+    margin-bottom: 30px;
+  }
+}
+
+/*********************** BREADCRUMB ***********************/
+
+.breadcrumb {
+  display: block;
+  font-size: 0.75rem;
+  color: $gray;
+  position: relative;
+  z-index: 5;
+  background: no-repeat;
+  border: none;
+  padding: 0;
+  margin: 0;
+  
+
+  .section {
+    @include clearfix();
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  a {
+    float: right;
+    color: $darkgray;
+    
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:before {
+      content:"/";
+      padding: 0 3px;
+      color: $gray;
+    }
+  }
+  span {
+    float: right;
+  }
+
+  @media only screen and (max-width: $scn-tablet) {
+    display: none;
+  }
+}
+
+/*********************** PAGER ***********************/
+
+.pagination {
+  padding: 15px 0;
+  li {
+    padding: 0;
+    margin: 0 8px;
+    text-align: center;
+    a {
+      @include border-radius(5px);
+      display: block;
+      font-size: $f-size-s;
+      padding: 0.1em 0.5em;
+      color: $black;
+      &:hover {
+        color: $red;
+        text-decoration: none;
+      }
+    }
+
+    &.current {
+      a {
+        background: $red;
+        color: $white;
+      }
+    }
+  }
+}

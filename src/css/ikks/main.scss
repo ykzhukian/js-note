@@ -1,0 +1,43 @@
+// Basic
+@import 'slick';
+
+// 1. Configuration and helpers
+@import 'abstracts/vars';
+@import 'abstracts/mixins';
+
+// 2. Vendors
+@import 'vendor/reset';
+@import 'vendor/normalize';
+
+
+// 3. Base stuff
+@import 'base/icons';
+@import 'base/typography';
+@import 'base/helpers';
+@import 'base/form';
+
+// 4. Layout-related sections
+@import 'layout/layout';
+@import 'layout/header';
+@import 'layout/footer';
+
+// 5. Components
+@import 'components/global';
+@import 'components/button';
+@import 'components/tab';
+@import 'components/slider';
+@import 'components/popup';
+@import 'components/blocks';
+@import 'components/wysiwyg';
+
+// 6. Page-specific styles
+@import 'pages/homepage';
+@import 'pages/collection';
+@import 'pages/history';
+@import 'pages/bonjour';
+@import 'pages/store';
+@import 'pages/join';
+
+/*// 7. Themes
+@import
+  'themes/default';*/

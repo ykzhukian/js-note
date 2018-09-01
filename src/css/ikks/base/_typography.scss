@@ -1,0 +1,101 @@
+// Typography
+
+@font-face {
+    font-family: 'Archivo';
+    src: url($base-font-url + '/Archivo-Regular.eot?#iefix') format('embedded-opentype'),  
+         url($base-font-url + '/Archivo-Regular.woff') format('woff'), 
+         url($base-font-url + '/Archivo-Regular.ttf')  format('truetype'), 
+         url($base-font-url + '/Archivo-Regular.svg#Archivo-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url($base-font-url + '/Archivo-SemiBold.eot?#iefix') format('embedded-opentype'),  
+         url($base-font-url + '/Archivo-SemiBold.woff') format('woff'), 
+         url($base-font-url + '/Archivo-SemiBold.ttf')  format('truetype'), 
+         url($base-font-url + '/Archivo-SemiBold.svg#Archivo-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo';
+    src: url($base-font-url + '/Archivo-Bold.eot?#iefix') format('embedded-opentype'),  
+         url($base-font-url + '/Archivo-Bold.woff') format('woff'), 
+         url($base-font-url + '/Archivo-Bold.ttf')  format('truetype'), 
+         url($base-font-url + '/Archivo-Bold.svg#Archivo-Bold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+// Fonts
+$font-normal: 'Archivo', Arial, 'microsoft yahei', '微软雅黑', 'SimHei', '中易黑体', sans-serif;
+
+// Font sizes
+$f-size-xxs  : 0.6875rem;
+$f-size-xs  : 0.875rem;
+$f-size-s   : 1rem;
+$f-size     : 1.5rem;
+$f-size-l   : 1.875rem;
+$f-size-xl  : 2.5rem;
+$f-size-xxl : 4.375rem;
+
+/* === default font-size: 16px; === */
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+body{   
+    background-color:#FFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, input, textarea, select {
+    font-family: $font-normal;
+    color: $root-fontcolor;
+}
+
+h1, h2, h3,  h4, h5, h6, strong, b {
+    font-family: $font-normal;
+    font-weight: 600;
+}
+
+h1 {font-size: $f-size-xxl; margin-top: 0;}
+h2 {font-size: $f-size-xl;}
+h3 {font-size: $f-size-l;}
+h4 {font-size: $f-size;}
+h5 {font-size: $f-size-s;}
+h6 {font-size: $f-size-xs;}
+p, label {
+    font-size: $f-size-s;
+}
+
+h1, h2, h3,  h4, h5, h6, strong, b, p {
+    line-height: 1.25em;
+    margin-bottom: 0.8em; 
+    color: inherit; 
+}
+
+p {
+    font-family: $font-normal;
+    font-size: $f-size-xs;
+    line-height: 1.5em;
+    color: $darkgray;
+
+    @media only screen and (max-width: $scn-tablet) {
+        font-size: $f-size-s;
+    }
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}

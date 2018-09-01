@@ -1,0 +1,42 @@
+// Layout
+
+/* ==========================================================================
+   Layout classes
+   ========================================================================== */
+.wrapper {
+	min-width: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.section {
+    max-width: 1200px;
+    padding: 70px 15px;
+    margin: 0 auto;
+    @media only screen and (max-width: $scn-tablet) {
+        padding: 30px 15px;
+    }
+}
+
+.inner-wrapper {
+    max-width: 970px;
+    margin: 0 auto;
+
+    &.more-gap {
+        max-width: 770px;
+    }
+    @media only screen and (max-width: $scn-desktop) {
+        
+    }
+    @media only screen and (max-width: $scn-tablet) {
+        
+    }
+}
+
+.col {
+    padding: 10px 15px;
+    @media only screen and (max-width: $scn-tablet) {
+        padding: 7px 15px;
+    }
+}
+

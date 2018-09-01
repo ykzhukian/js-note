@@ -1,0 +1,833 @@
+// Homepage
+
+/* ==========================================================================
+   IMAGETEXT classes
+   ========================================================================== */
+.imageText-home {
+	display: block;
+	position: relative;
+	
+	&:hover {
+		text-decoration: none;
+	}
+
+	.imageText-img {
+		position: relative;
+		overflow: hidden;
+		padding-top: 74%;
+
+		img {
+			@extend .cover-bg;
+			max-height: 100%;
+			width: auto;
+		}
+	}
+
+	.imageText-text {
+		position: absolute;
+		width: 100%;
+		padding: 20px;
+		left: 0;
+		bottom: 0;
+		color: $white;
+
+		.imageText-title {
+			font-size: $f-size;
+			line-height: 1em;
+			margin-bottom: 0;
+		}
+
+		.small-text {
+			font-size: $f-size-xxs;
+			text-transform: uppercase;
+		}
+
+		@media only screen and (max-width: $scn-desktop) {
+			.imageText-title {
+				font-size: $f-size-xs;
+			}
+		}
+
+		@media only screen and (max-width: $scn-tablet) {
+			.imageText-title {
+				font-size: $f-size-l;
+			}
+
+			.small-text {
+				font-size: $f-size-xs;
+			}
+		}
+	}
+
+	&.hero {
+		height: 100%;
+
+		.imageText-img {
+			padding-top: 74.5%;
+			height: 100%;
+		}
+		.imageText-text {
+			padding: 45px 50px;
+
+			.imageText-title {
+				font-size: $f-size-xxl;
+				text-transform: uppercase;
+			}
+
+			.btn {
+				margin-top: 30px;
+			}
+		}
+
+		@media only screen and (max-width: $scn-desktop) {
+			.imageText-text {
+				padding: 20px;
+
+				.imageText-title {
+					font-size: $f-size-xl;
+				}
+
+				.btn {
+					font-size: 0.75rem;
+					margin-top: 20px;
+				}
+			}
+		}
+
+		@media only screen and (max-width: $scn-tablet) {
+			margin: 0 -15px;
+
+			.imageText-img {
+				padding-top: 90%;
+			}
+		}
+	}
+
+	&.vertical-column {
+		& + .vertical-column {
+			margin-top: 25px;
+		}
+
+		@media only screen and (max-width: $scn-tablet) {
+			margin-top: 15px;
+			& + .vertical-column {
+				margin-top: 15px;
+			}
+		}
+	}
+
+	&.land-block, &.vert-block {
+		.imageText-text {
+			background-color: rgba(0,0,0,0.3);
+			padding: 20px;
+			z-index: 5;
+
+			.imageText-title {
+				font-size: 1.625rem;
+				font-weight: 800;
+				text-transform: uppercase;
+			}
+
+			.btn {
+				margin-top: 20px;
+				font-size: 0.75rem;
+				padding: 0.6em 1.25em;
+			}
+		}
+
+		@media only screen and (max-width: $scn-desktop) {
+			&:before {
+				display: none;
+			}
+
+			.imageText-text {
+				background: transparent;
+
+				.imageText-title {
+					font-size: 1.125rem;
+					color: $black;
+				}
+
+				.btn {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.vert-block {
+		.imageText-img {
+			padding-top: 150%;
+		}
+	}
+
+	&.land-block {
+		&:before {
+			background-color: rgba(0,0,0,0.3);
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 47.35%;
+			height: 100%;
+			z-index: 1;
+		}
+		.imageText-img {
+			padding-top: 50%;
+
+			img {
+				max-height: none;
+				width: 100%;
+			}
+		}
+		.imageText-text {
+			background: transparent;
+			width: 47.35%;
+
+		}
+	}
+}
+
+/* ==========================================================================
+   BONJOUR PARIS CAPSULE classes
+   ========================================================================== */
+.home-BonjourParisCapsule {
+	background-color: $lightgray;
+	overflow: hidden;
+}
+
+.capsule-list {
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		background-image: url($base-image-url + '/dot_pattern_v.png');
+		background-repeat: repeat-x;
+		background-size: auto 100%;
+		background-position: center top;
+		content: "";
+		position: absolute;
+		top: 50px;
+		left: 0;
+		width: 495px;
+		height: 160px;
+		mix-blend-mode: multiply;
+	}
+
+	.slick-arrow  {
+		&.slick-prev {
+			left: auto;
+			right: 0;
+			margin-bottom: 40px;
+			&:before {
+			  content: "\e901";
+			}
+		}
+
+		&.slick-next {
+			right: 0;
+			margin-top: 40px;
+			&:before {
+			  content: "\e900";
+			}
+		}
+	}
+}
+
+.capsule-block {
+	display: block;
+	position: relative;
+	padding: 10px 0;
+	
+	&:hover {
+		text-decoration: none;
+	}
+
+	.capsule-img {
+
+		img {
+			@extend .cover-bg;
+		}
+
+		.capsuleBlock-image-a {
+			position: relative;
+			overflow: hidden;
+			width: 78.125%;
+			margin: 30px 0 10px auto;
+
+			&:before {
+				content: "";
+				display: block;
+				padding-top: 100%;
+			}
+		}
+		.capsuleBlock-image-b {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			
+			&:before {
+				content: "";
+				display: block;
+				padding-top: 150%;
+			}
+		}
+		.capsuleBlock-text {
+			padding-left: 8%;
+			position: relative;
+			z-index: 1;
+
+			h2 {
+				font-size: $f-size-xxl;
+				text-transform: none;
+				line-height: 1em;
+				margin-bottom: 0;
+			}
+		}
+
+		@media only screen and (max-width: $scn-desktoplg) {
+			.capsuleBlock-text {
+				h2 {
+					font-size: 3.125rem;
+				}
+			}
+		}
+
+		@media only screen and (max-width: $scn-tablet) {
+			margin-bottom: 20px;
+
+			.row {
+				-ms-flex-align: end;
+    			align-items: flex-end;
+
+				.col-8 {
+					&:first-child {
+						margin-right: -16.666667%;
+					}
+
+					&:last-child {
+						margin-left: -16.666667%;
+					}
+				}
+			}
+
+			.capsuleBlock-image-a {
+				display: none;
+			}
+
+			.capsuleBlock-text {
+				padding: 30px 0;
+			}
+		}
+	}
+
+	.capsule-content {
+		padding-right: 80px;
+
+		.small-text {
+			display: block;
+			font-size: $f-size-xxs;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+
+		.capsule-title {
+			font-size: $f-size;
+			line-height: 1em;
+			margin-bottom: 30px;
+		}
+
+		p {
+			margin-bottom: 30px;
+		}
+
+		@media only screen and (max-width: $scn-tablet) {
+			padding: 0;
+
+			.small-text {
+				font-size: 0.75rem;
+			}
+
+			.capsule-title {
+				font-size: 1.625rem;
+			}
+
+			
+		}
+	}
+}
+
+
+
+/* ==========================================================================
+   LEO & LEA classes
+   ========================================================================== */
+.leolea-block {
+	display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $scn-tablet) {
+    	-ms-flex-wrap: wrap;
+    	flex-wrap: wrap;
+    }
+
+	.leolea-imageText {
+		position: relative;
+		z-index: 3;
+		-ms-flex: 0 0 54%;
+	    flex: 0 0 54%;
+	    max-width: 54%;
+	    margin-right: -8.33333%;
+
+	    &:after {
+	    	@include transform(translate(40%, -50%));
+	    	content: "";
+	    	position: absolute;
+	    	right: 0;
+	    	top: 50%;
+	    	width: 57%;
+	    	padding-top: 57%;
+	    	border: 1px solid $black;
+	    	z-index: -1;
+	    }
+
+	    .leolea-logo {
+			@include transform(translateX(-50%));
+			top: 0;
+			left: 0;
+			position: absolute;
+			height: 100%;
+			padding: 20px 0;
+			z-index: 5;
+
+			img {
+				height: 100%;
+			}
+		}
+
+		.leolea-img {
+			position: relative;
+			overflow: hidden;
+			padding-top: 65%;
+
+			img {
+				@extend .cover-bg;
+			}
+		}
+		
+		.leolea-text {
+			@include transform(translateY(-50%));
+			position: absolute;
+			width: 100%;
+			padding: 0 70px;
+			top: 50%;
+			left: 0;
+
+			.leolea-title {
+				font-size: $f-size-l;
+				font-weight: 800;
+				text-transform: uppercase;
+				margin-bottom: 30px;
+			}
+		}
+
+		@media only screen and (max-width: $scn-tablet) {
+			-ms-flex: 0 0 100%;
+		    flex: 0 0 100%;
+		    max-width: 100%;
+		    margin-right: -30px;
+
+		    &:after {
+		    	@include transform(translate(25%, -55%));
+		    	right: 50%;
+		    	top: 100%;
+		    	width: 55%;
+		    	padding-top: 55%;
+		    }
+
+		    .leolea-logo {
+				padding: 10px 0;
+			}
+
+			.leolea-text {
+				padding: 0 12.5%;
+
+				.leolea-title {
+					font-size: 1.0625rem;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	.leolea-video {
+		position: relative;
+		z-index: 5;
+		-ms-flex: 0 0 50%;
+	    flex: 0 0 50%;
+	    max-width: 50%;
+	    margin-right: -4.33333%;
+
+	    .video-js {
+	    	width: 100%;
+	    	height: auto;
+		    padding-top: 56%;
+
+		    .vjs-big-play-button {
+		    	@include transform(translate(-50%, -50%));
+		    	position: absolute;
+		    	top: 50%;
+		    	left: 50%;
+		    	width: 60px;
+		    	height: 60px;
+		    	border: none;
+		    	background: transparent;
+
+		    	.vjs-icon-placeholder {
+		    		font-size: 60px;
+		    		color: $darkgray;
+		    		&:before {
+		    			@extend .icons;
+		    			content: "\e904";
+		    		}
+		    	}
+		    }
+	    }
+
+	    @media only screen and (max-width: $scn-tablet) {
+	    	-ms-flex: 0 0 83.33333%;
+		    flex: 0 0 83.33333%;
+		    max-width: 83.33333%;
+		    margin: -8% 0 0 16.66667%;
+	    }
+	}
+}
+
+.collection-girlboy {
+	padding-bottom: 70px;
+	.row {
+		margin-right: 0; 
+		margin-left: 0; 
+		.col-12 {
+			padding-right: 0;
+    		padding-left: 0;
+		}
+	}
+
+	@media only screen and (max-width: $scn-tablet) {
+		padding-bottom: 30px;
+		.row {
+			.col-12 {
+				padding-right: 15px;
+	    		padding-left: 15px;
+
+	    		& + .col-12 {
+	    			padding-top: 15px;
+	    		}
+			}
+		}
+	}
+}
+
+.collection-home {
+	display: block;
+	position: relative;
+	
+	&:hover {
+		text-decoration: none;
+	}
+
+	.collection-img {
+		position: relative;
+		overflow: hidden;
+		padding-top: 55%;
+
+		img {
+			@extend .cover-bg;
+		}
+	}
+
+	.collection-text {
+		position: absolute;
+		width: 100%;
+		max-width: 600px;
+		padding: 50px 20px;
+		bottom: 0;
+		color: $black;
+
+		.collection-title {
+			font-size: 3em;
+			line-height: 1em;
+			margin-bottom: 0;
+		}
+
+		.btn {
+			margin-top: 30px;
+		}
+
+		@media only screen and (max-width: $scn-desktoplg) {
+			padding: 50px;
+		}
+
+		@media only screen and (max-width: $scn-desktop) {
+			padding: 20px;
+
+			.collection-title {
+				font-size: $f-size-l;
+			}
+
+			.btn {
+				margin-top: 15px;
+			}
+		}
+
+		@media only screen and (max-width: $scn-tablet) {
+			max-width: 100%;
+
+			.collection-title {
+				font-size: $f-size-l;
+			}
+
+			
+		}
+	}
+
+	&.girl-collection {
+		.collection-text {
+			right: 0;
+		}
+	}
+
+	&.boy-collection {
+		.collection-text {
+			left: 16.666667%;
+		}
+
+		@media only screen and (max-width: $scn-desktoplg) {
+			.collection-text {
+				left: 0;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   IKKS FRENCH ACADEMY classes
+   ========================================================================== */
+.home-frenchAcademy {
+	background-color: $lightgray;
+
+	.frenchAcademy-logo {
+		max-width: 370px;
+		position: relative;
+		z-index: 5;
+	}
+
+	.frenchAcademy-list {
+		position: relative;
+		padding: 35px 0;
+
+		.col {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+
+		&:before {
+			background-image: url($base-image-url + '/dot_pattern.png');
+			background-repeat: repeat-y;
+			background-size: 100% auto;
+			background-position: center top;
+			content: "";
+			position: absolute;
+			top: -80px;
+			right: 7%;
+			width: 160px;
+			height: 495px;
+			mix-blend-mode: multiply;
+		}
+	}
+
+	@media only screen and (max-width: $scn-tablet) {
+		.frenchAcademy-logo {
+			max-width: 240px;
+		}
+
+		.frenchAcademy-list {
+			padding: 23px 7px;
+
+			.col {
+				padding: 7px;
+			}
+
+			&:before {
+				top: -30px;
+				right: -15px;
+				width: 130px;
+				height: 395px;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   IKKS FRENCH ACADEMY classes
+   ========================================================================== */
+.home-ikksParis {
+	p {
+		margin-bottom: 50px;
+	}
+
+	@media only screen and (max-width: $scn-tablet) {
+		p {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+/* ==========================================================================
+   IKKS NEWS classes
+   ========================================================================== */
+.home-ikksNews {
+	background-color: $lightgray;
+
+	.section {
+		position: relative;
+	}
+
+	.frame-title {
+    	position: absolute;
+    	top: 70px;
+    	right: 15px;
+    	width: 30%;
+    	padding-top: 12%;
+    	padding-left: 7%;
+    	z-index: 3;
+
+    	&:before {
+    		content: "";
+	    	position: absolute;
+	    	top: 0;
+	    	right: 0;
+	    	bottom: 12%;
+	    	left: 0;
+	    	border: 2px solid $black;
+	    	z-index: -1;
+    	}
+
+		h2 {
+			@extend .section-title;
+			@extend .inline-block;
+			line-height: 1em;
+			padding: 0 10px;
+			margin-bottom: 0;
+		    background-color: $lightgray;
+		    color: $black;
+		}
+	}
+
+	@media only screen and (max-width: $scn-desktoplg) {
+		.frame-title {
+			padding-left: 9%;
+			h2 {
+				font-size: $f-size-xl;
+			}
+		}
+	}
+
+	@media only screen and (max-width: $scn-tablet) {
+		.frame-title {
+	    	right: 15px;
+	    	top: 40px;
+	    	left: 30px;
+			width: 240px;
+	    	height: 145px;
+	    	padding-top: 0;
+	    	padding-left: 20px;
+	    	border-width: 1px;
+
+	    	&:before {
+	    		border-width: 1px;
+	    		top: 18px;
+		    	bottom: 0;
+	    	}
+
+			h2 {
+				padding: 0;
+				display: inline;
+			}
+		}
+	}
+}
+
+.ikksNews-list {
+	padding-top: 80px;
+	position: relative;
+	z-index: 5;
+
+	.col {
+		padding: 0 15px;
+
+		&:last-child {
+			-webkit-align-self: flex-end;
+			align-self: flex-end;
+		}
+	}
+
+	@media only screen and (max-width: $scn-tablet) {
+		overflow: auto;
+		padding-top: 100px;
+
+		.row {
+			margin-right: -7px;
+    		margin-left: -7px;
+		}
+
+		.col {
+			padding: 0 7px;
+
+			&:last-child {
+				-ms-flex: 0 0 180px;
+			    flex: 0 0 180px;
+			    max-width: 180px;
+			}
+		}
+	}
+}
+
+.ikksNews-block {
+	display: block;
+	
+	&:hover {
+		text-decoration: none;
+	}
+
+	span {
+		display: block;
+		padding: 5px 0;
+		font-size: $f-size-xxs;
+		text-transform: uppercase;
+	}
+	.ikksNews-title {
+		font-size: $f-size;
+		margin-bottom: 10px;
+	}
+	p {
+		margin-bottom: 0;
+	}
+
+	@media only screen and (max-width: $scn-tablet) {
+		min-width: 235px;
+
+		span {
+			padding: 15px 0 10px;
+		}
+		.ikksNews-title {
+			font-size: 1.25rem;
+			margin-bottom: 10px;
+		}
+	}
+}

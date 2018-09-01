@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Some Helper classes
+   ========================================================================== */
+
+.success-text   {color: green;}
+.warning-text   {color: orange;}
+.error-txt      {color: red;}
+
+.bold           {font-weight:bold;}
+.text-right     {text-align:right;}
+.text-center    {text-align:center;}
+.text-left      {text-align:left;}
+.underline      {text-decoration: underline;}
+
+/*Display*/
+.block          {display:block;}
+.inline         {display:inline;}
+.hide           {display:none !important;}
+.inline-block   {display:inline-block; *display: inline; *zoom:1;}
+
+/*Positioning*/
+.center         {margin:0 auto;}
+.float-left     {float:left;}
+.float-right    {float:right;}
+.clear-left     {clear:right;}
+.clear-right    {clear:left;}
+.clear-both     {clear:both;}
+.relative       {position:relative;}
+.absolute       {position:absolute;}
+.fixed          {position:fixed;}
+
+/*overflow*/
+.overflow-h,
+.locked         {overflow: hidden;}
+.overflow-a     {overflow: auto;}
+.overflow-v     {overflow: visible;}
+
+.clearfix {
+    *zoom: 1;
+    &:before {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+    &:after {
+        content: " ";
+        display: table;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+.disable {
+  opacity: 0.5;
+  background: #ED4A3E;
+}
+
+.pointer {
+  cursor: pointer;
+}

@@ -1,0 +1,374 @@
+// Header
+
+.header {
+	width: 100%;
+	background-color: $white;
+	border-bottom: 1px solid $black;
+	z-index: 999;
+	a {
+		@include transition(color 0.25s ease-out, background 0.25s ease-out);
+		text-decoration: none;
+	}
+	.section {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.h-top {
+		background-color: $white;
+	}
+
+	.h-head {
+		margin-bottom: 60px;
+		position: relative;
+
+		@media only screen and (max-width: $scn-desktop) {
+			display: -webkit-box;
+		    display: -ms-flexbox;
+		    display: flex;
+		    -webkit-box-align: center;
+		    -ms-flex-align: center;
+		    align-items: center;
+		    -webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		    justify-content: space-between;
+	    }
+
+	    @media only screen and (max-width: $scn-desktop) {
+	    	margin-bottom: 0;
+	    }
+	}
+
+	.h-time {
+		color: $gray;
+		font-size: $f-size-xs;
+		padding: 20px 0;
+
+		a {
+			@extend .inline-block;
+			margin-right: 15px;
+			&:hover {
+				color: $black;
+			}
+		}
+
+		span {
+			@extend .inline-block;
+			vertical-align: text-bottom;
+			font-size: 1.125rem;
+			margin-right: 3px;
+		}
+
+		@media only screen and (max-width: $scn-desktop) {
+			display: block;
+			position: relative;
+			z-index: 5;
+			font-size: $f-size-xxs;
+			text-align: center;
+
+			a {
+				display: none;
+				margin: 0;
+				&.current {
+					display: block;
+				}
+			}
+
+			span {
+				display: block;
+				margin: 0 0 3px;
+			}
+		}
+	}
+
+	.logo {
+		max-width: 150px;
+		margin: 10px auto;
+
+		a {
+			display: block;
+		}
+
+		@media only screen and (max-width: $scn-desktop) {
+			@include transform(translate(-50%,-50%));
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: 0;
+	    }
+
+	    @media only screen and (max-width: $scn-tablet) {
+	        max-width: 80px;
+	    }
+	}
+
+	.h-bottom {
+		@media only screen and (max-width: $scn-desktop) {
+			display: none;
+			position: fixed;
+			width: 100%;
+			z-index: 999;
+			top: 76px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: $white;
+			border: none;
+			overflow: auto;
+
+			.section {
+				padding: 0;
+			}
+	    }
+	}
+
+	.h-menu {
+		display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    -webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	    justify-content: center;
+	    font-size: $f-size-xs;
+
+	    @media only screen and (max-width: $scn-desktop) {
+	    	display: block;
+	    }
+	}
+
+	.h-menu-list {
+		@include fixFlex();
+		display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    -webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	    justify-content: space-between;
+		
+		li {
+			-webkit-box-flex: 0;
+		    -ms-flex: 0 0 210px;
+		    flex: 0 0 210px;
+		    max-width: 210px;
+			text-align: center;
+			position: relative;
+
+			a, span {
+				display: block;
+				position: relative;
+				font-weight: 600;
+				text-decoration: none;
+				text-transform: uppercase;
+				padding: 15px;
+			}
+
+			&:hover {
+				.h-submenu-list {
+					display: block;
+				}
+
+				a, span {
+					color: $white;
+					background-color: $black;
+				}
+			}
+
+			&.selected {
+				a, span {
+					color: $white;
+					background-color: $black;
+				}
+			}
+		}
+
+		@media only screen and (max-width: $scn-desktop) {
+			display: block;
+
+			> li {
+				-ms-flex: 0 0 100%;
+			    flex: 0 0 100%;
+			    max-width: 100%;
+			    text-align: left;
+
+			    & + li {
+			    	border-top: 1px solid $darkgray;
+			    }
+
+			    a, span {
+					padding: 15px 40px;
+				}
+			}
+	    }
+	}
+
+	.h-language {
+		-webkit-box-flex: 0;
+	    -ms-flex: 0 0 8.333333%;
+	    flex: 0 0 8.333333%;
+	    max-width: 8.333333%;
+	    text-align: right;
+		a {
+			@extend .inline-block;
+			color: $darkgray;
+			text-transform: uppercase;
+			padding: 15px 0 15px 15px;
+
+			&:hover {
+				color: $black;
+			}
+		}
+
+		@media only screen and (max-width: $scn-desktop) {
+			-ms-flex: 0 0 100%;
+		    flex: 0 0 100%;
+		    max-width: 100%;
+		    text-align: left;
+		    border-top: 1px solid $darkgray;
+		    border-bottom: 1px solid $darkgray;
+
+		    a {
+		    	display: block;
+		    	padding: 15px 40px;
+		    	color: $black;
+		    }
+	    }
+	}
+
+	.h-submenu-list {
+		display: none;
+		background-color: $black;
+		color: $white;
+		position: absolute;
+		min-width: 270px;
+		top: 100%;
+		left: 0;
+		z-index: 999;
+		
+		li {
+			border-top: 1px solid #4A4A4A;
+			padding: 15px 33px 15px 66px;
+			-ms-flex: 0 0 100%;
+		    flex: 0 0 100%;
+		    max-width: 100%;
+		    text-align: left;
+
+		    a {
+				display: block;
+				font-weight: 300;
+				text-transform: none;
+				padding: 0;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		@media only screen and (max-width: $scn-desktop) {
+			display: block;
+			position: static;
+			width: 100%;
+			li {
+				padding: 15px 70px;
+			}
+	        
+	    }
+	}
+
+    .burger-wrapper {
+    	display: none;
+	    .hamburger {
+	    	background-color: transparent;
+		    border: none;
+		    padding: 0;
+		    display: block;
+
+		    .nav-icon {
+			    cursor: pointer;
+			    width: 25px;
+			    height: 17px;
+			    position: relative;
+			    outline: 0;
+			    span {
+				    @include transition(background .1618s ease-in, transform .1618s ease-in);
+				    background-color: $black;
+				    display: block;
+				    width: 100%;
+				    height: 1px;
+				    left: 0;
+				    position: absolute;
+
+				    &:first-child {
+					    top: 0;
+					}
+					&:nth-child(2) {
+					    top: 8px;
+					}
+					&:nth-child(3) {
+					    top: 16px;
+					}
+				}
+			}
+
+			&:hover {
+				.nav-icon {
+				    span {
+					    background-color: $gray;
+					}
+				}
+			}
+		}
+		@media only screen and (max-width: $scn-desktop) {
+			display: block;
+			position: relative;
+			z-index: 5;
+	    }
+	}
+
+	&.open {
+		@media only screen and (max-width: $scn-desktop) {
+			.h-bottom {
+				display: block;
+			}
+
+			.burger-wrapper {
+			    .hamburger {
+				    .nav-icon {
+					    span {
+					    	background-color: $black;
+						    &:first-child {
+							    @include transform(rotate(45deg));
+							    top: 50%
+							}
+							&:nth-child(2) {
+							    display: none;
+							}
+							&:nth-child(3) {
+							    @include transform(rotate(-45deg));
+							    top: 50%
+							}
+						}
+					}
+
+					&:hover {
+						.nav-icon {
+						    span {
+							    background-color: $black;
+							}
+						}
+					}
+				}
+				@media only screen and (max-width: $scn-desktop) {
+					display: block;
+					position: relative;
+					z-index: 5;
+			    }
+			}
+		}
+	}
+}

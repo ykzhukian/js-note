@@ -34,8 +34,44 @@ module.exports = {
                         presets: ['env', 'react'],
                     }
                 },
+                
                 exclude: /node_modules/
             },
+            {
+                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                query: {
+                  limit: 10000,
+                  mimetype: 'application/font-woff'
+                }
+              },
+              {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                query: {
+                  limit: '10000',
+                  mimetype: 'application/octet-stream'
+                }
+              },
+              {
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader'
+              },
+              {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                query: {
+                  limit: '10000',
+                  mimetype: 'application/svg+xml'
+                }
+              },
+              {
+                test: /\.(png|jpg)$/,
+                loader: 'file-loader',
+                query: {
+                  limit: 8192
+                }
+              },
         ]
     },
     mode: 'development',
@@ -45,7 +81,8 @@ module.exports = {
 　　　　    inject: true
 　　　　 }),
         new CopyWebpackPlugin([
-            {from: 'src/data', to: 'data'}
+            {from: 'src/data', to: 'data'},
+            {from: 'src/assets', to: 'assets'},
         ])
 　　 ]
 }

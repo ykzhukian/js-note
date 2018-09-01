@@ -1,0 +1,71 @@
+// Button
+
+input[type="submit"], button, .btn {
+    @extend .inline-block;
+    @include transition(all .3s ease-in);
+    @include border-radius(0);
+    @include box-shadow(none);
+    font-family: $font-normal;
+    text-align: center;
+    color: $black;
+    background: transparent;
+    font-size: $f-size-xs;
+    line-height: 1em;
+    padding: 0.858em 1.5em;
+    border: 1px solid $black;
+    width: auto;
+    text-shadow: none;
+
+    &:hover, &:active, &:focus {
+        @include box-shadow(none);
+        box-shadow: none;
+        outline: 0;
+        text-decoration: none;
+    }
+
+    &:hover {
+        background: $black;
+        color: $white;
+    }
+
+    .icon-arrow-r {
+        vertical-align: text-bottom;
+        margin-left: 8px;
+    }
+    
+    @media only screen and (max-width: $scn-tablet) {
+        font-size: 0.75rem;
+        padding: 0.75em 1.25em;
+    }
+}
+
+.white-btn {
+    border-color: $white;
+    color: $white;
+    &:hover {
+        background: $white;
+        color: $black;
+    }
+}
+
+.black-btn {
+    background: $black;
+    border-color: $black;
+    color: $white;
+    &:hover {
+        background: $white;
+        color: $black;
+    }
+}
+
+.non-btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    &:hover {
+        color: $red;
+    }
+}
