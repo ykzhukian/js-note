@@ -16,10 +16,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <Header />
-        <Home />
-        {/* <Switch /> */}
-        {/* <Capsule /> */}
+        <Capsule />
       </div>
     )
   }
