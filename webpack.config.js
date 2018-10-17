@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: [
-        path.resolve(__dirname, './src/js/index.js'), //指定入口文件，程序从这里开始编译,__dirname当前所在目录, ../表示上一级目录, ./同级目录
+        path.resolve(__dirname, './src/js/index.jsx'), //指定入口文件，程序从这里开始编译,__dirname当前所在目录, ../表示上一级目录, ./同级目录
     ],
     output: {
         path: path.resolve(__dirname, './dist'), // 输出的路径
@@ -74,6 +74,22 @@ module.exports = {
               },
         ]
     },
+    resolve: {
+        modules: ['node_modules'],
+        alias: {
+          images: 'assets/images',
+          api: 'js/api',
+          components: 'js/components',
+          config: 'js/config',
+          lang: 'js/lang',
+          layouts: 'js/layouts',
+          pages: 'js/pages',
+          utils: 'js/utils',
+          ducks: 'js/ducks',
+          data: 'js/data'
+        },
+        extensions: ['.js', '.jsx', '.css', '.scss', '.json', '.html', '.ico']
+      },
     mode: 'development',
     plugins: [
 　　 　　new HtmlWebpackPlugin({
