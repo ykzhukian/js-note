@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ControlledComponent from './ReactDoc/ControlledComponent';
 import withMouse from './ReactDoc/HOCWithMouse';
+import WithMouse from './ReactDoc/RenderPropWithMouse';
 
 class App extends Component {
 
@@ -10,7 +11,6 @@ class App extends Component {
 
   render() {
     const { x, y } = this.props.mouse;
-    console.log(this.props);
     return (
       <div className="wrapper">
         <ControlledComponent />
@@ -20,6 +20,14 @@ class App extends Component {
           ,&nbsp;
           {y}
         </h1>
+        <WithMouse render={({ x: px, y: py }) => (
+          <h2>
+            {px}
+            ,&nbsp;
+            {py}
+          </h2>
+        )}
+        />
       </div>
     );
   }
