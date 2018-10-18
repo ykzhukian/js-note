@@ -1,50 +1,51 @@
 {
-    "extends": "airbnb",
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true,
-        "modules": true
-      }
-    },
-    "env": {
-      "browser": true,
-      "jest": true
-    },
-    "rules": {
-      "import/no-unresolved": "off",
-      "import/no-extraneous-dependencies": "off",
-      "import/prefer-default-export": "off",
-      "import/extensions": "off",
-      "jsx-a11y/anchor-is-valid": "off",
-      "jsx-a11y/alt-text": "off",
-      "jsx-a11y/no-noninteractive-element-interactions": "off",
-      "jsx-a11y/href-no-hash": "off",
-      "jsx-a11y/no-static-element-interactions": "off",
-      "jsx-a11y/label-has-for": "off",
-      "no-underscore-dangle": "off",
-      "max-len": "off",
-      "comma-dangle": "off",
-      "no-plusplus": "off",
-      "react/self-closing-comp": "off",
-      "react/forbid-prop-types": "off",
-      "react/no-array-index-key": "off",
-      "react/no-danger": "off",
-      "react/prefer-stateless-function": "off",
-      "object-shorthand": "off",
-      "arrow-body-style": "off",
-      "react/no-multi-comp": "off",
-      "react/sort-comp": "off",
-      "react/jsx-wrap-multilines": "off",
-      "react/require-default-props": "off",
-      "no-confusing-arrow": "off",
-      "no-restricted-globals": "off",
-      "arrow-parens": "off",
-      "no-mixed-operators": "off",
-      "class-methods-use-this": "off",
-      "padded-blocks": 0,
-      "jsx-a11y/click-events-have-key-events": "off",
-      "jsx-a11y/media-has-caption": "off",
-      "react/destructuring-assignment": "off"
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
     }
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/alt-text": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/label-has-for": "off",
+    "no-underscore-dangle": "off",
+    "max-len": "off",
+    "comma-dangle": "off",
+    "no-plusplus": "off",
+    "react/self-closing-comp": "off",
+    "react/forbid-prop-types": "off",
+    "react/no-array-index-key": "off",
+    "react/no-danger": "off",
+    "react/prefer-stateless-function": "off",
+    "object-shorthand": "off",
+    "arrow-body-style": "off",
+    "react/no-multi-comp": "off",
+    "react/sort-comp": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/require-default-props": "off",
+    "no-confusing-arrow": "off",
+    "arrow-parens": "off",
+    "no-mixed-operators": "off",
+    "class-methods-use-this": "off",
+    "padded-blocks": 0,
+    "jsx-a11y/click-events-have-key-events": "off",
+    "react/prop-types": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/no-unused-state": 0,
+    "react/destructuring-assignment": 0,
   }
-  
+}
