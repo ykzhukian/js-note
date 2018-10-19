@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ControlledComponent from './ReactDoc/ControlledComponent';
-import withMouse from './ReactDoc/HOCWithMouse';
-import WithMouse from './ReactDoc/RenderPropWithMouse';
+// import ControlledComponent from './ReactDoc/ControlledComponent';
+// import withMouse from './ReactDoc/HOCWithMouse';
+// import WithMouse from './ReactDoc/RenderPropWithMouse';
 import { ThemeContext, themes } from './ReactDoc/ThemeContext';
 import ThemedButton from './ReactDoc/ThemedButton';
 
@@ -31,31 +31,10 @@ class App extends Component {
   }
 
   render() {
-    const { x, y } = this.props.mouse;
     return (
       <div className="wrapper">
-        <ControlledComponent />
-        <h1>
-          The mouse is at &nbsp;
-          {x}
-          ,&nbsp;
-          {y}
-        </h1>
-        <WithMouse render={({ x: px, y: py }) => (
-          <h2>
-            {px}
-            ,&nbsp;
-            {py}
-          </h2>
-        )}
-        />
         <ThemeContext.Provider value={this.state.theme}>
-          <button
-            type="button"
-            onClick={this.toggleTheme}
-          >
-            Change Theme
-          </button>
+          <ThemedButton onClick={this.toggleTheme} />
         </ThemeContext.Provider>
         <ThemedButton />
       </div>
@@ -63,4 +42,4 @@ class App extends Component {
   }
 }
 
-export default withMouse(App);
+export default App;

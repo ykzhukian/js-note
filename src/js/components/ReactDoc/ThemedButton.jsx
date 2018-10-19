@@ -4,7 +4,7 @@ import { ThemeContext } from './ThemeContext';
 const ThemedButton = props => {
   return (
     <ThemeContext.Consumer>
-      {({ theme }) => {
+      {theme => {
         console.log(theme);
         return (
           <button
