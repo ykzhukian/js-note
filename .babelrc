@@ -1,10 +1,5 @@
 {
-  "presets": [
-    ["env", {
-      "modules": false
-    }],
-    "react"
-  ],
-  "plugins": ["transform-class-properties"],
+  "presets": ["@babel/env", "@babel/react"],
+  "plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-react-jsx"],
   "comments": true
 }

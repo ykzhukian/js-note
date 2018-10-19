@@ -56,6 +56,10 @@ class App extends Component {
           <ThemedButton />
         </ThemeContext.Provider>
         <Modal>
+          <>
+            <div>1</div>
+            <div>2</div>
+          </>
           <div>modal content</div>
         </Modal>
       </div>
