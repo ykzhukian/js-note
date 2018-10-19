@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-// import ControlledComponent from './ReactDoc/ControlledComponent';
-// import withMouse from './ReactDoc/HOCWithMouse';
-// import WithMouse from './ReactDoc/RenderPropWithMouse';
+import ControlledComponent from './ReactDoc/ControlledComponent';
+import withMouse from './ReactDoc/HOCWithMouse';
+import WithMouse from './ReactDoc/RenderPropWithMouse';
 import { ThemeContext, themes } from './ReactDoc/ThemeContext';
 import ThemedButton from './ReactDoc/ThemedButton';
+import Modal from './ReactDoc/PortalModal';
 
 class App extends Component {
 
@@ -23,23 +24,43 @@ class App extends Component {
     // be passed down into the context provider
     this.state = {
       theme: themes.light,
+      toggleTheme: this.toggleTheme,
     };
   }
+
 
   componentWillMount() {
     document.title = 'Yo';
   }
 
   render() {
+    const { x, y } = this.props.mouse;
     return (
       <div className="wrapper">
-        <ThemeContext.Provider value={this.state.theme}>
-          <ThemedButton onClick={this.toggleTheme} />
+        <ControlledComponent />
+        <h1>
+          The mouse is at &nbsp;
+          {x}
+          ,&nbsp;
+          {y}
+        </h1>
+        <WithMouse render={({ x: px, y: py }) => (
+          <h2>
+            {px}
+            ,&nbsp;
+            {py}
+          </h2>
+        )}
+        />
+        <ThemeContext.Provider value={this.state}>
+          <ThemedButton />
         </ThemeContext.Provider>
-        <ThemedButton />
+        <Modal>
+          <div>modal content</div>
+        </Modal>
       </div>
     );
   }
 }
 
-export default App;
+export default withMouse(App);
