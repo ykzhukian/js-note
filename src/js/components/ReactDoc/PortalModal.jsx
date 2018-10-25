@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const modalRoot = document.querySelector('#app');
+const modalRoot = document.querySelector('#app'); // Real node you want to render it to
 
 class Modal extends React.Component {
   constructor(props) {

@@ -28,6 +28,13 @@ class App extends Component {
     };
   }
 
+  // To enable sytax like following, you need to use @babel/plugin-proposal-class-properties
+  // state = {
+  //   theme: themes.light,
+  //   toggleTheme: this.toggleTheme,
+  // };
+  // inputRef = React.createRef();
+
   componentWillMount() {
     document.title = 'Yo';
   }

@@ -4,13 +4,16 @@ import React from 'react';
 export default class Component extends React.Component {
 
   // ----------- Mounting (with order) -----------
+
   // super(props) => this.props
   constructor() {}
   static getDerivedStateFromProps() {}
   // first render() {}
   componentDidMount() {}
 
+
   // ----------- Updating (with order) -----------
+
   // return an object to update the state, or null to update nothing.
   // Only case: the state depends on changes in props over time
   static getDerivedStateFromProps(props, state) {}
@@ -22,10 +25,14 @@ export default class Component extends React.Component {
   getSnapshotBeforeUpdate() {}
   componentDidUpdate(prevProps) {}
 
+
   // ----------- Unmounting -----------
+
   componentWillUnmount() {}
+  
 
   // ----------- Error Handling -----------
+
   static getDerivedStateFromError() {}
   componentDidCatch() {}
 
