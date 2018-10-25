@@ -30,5 +30,7 @@ Better to use the key on form,
 When a key changes, React will create a new component instance rather than update the current one.
 */
 
+// 3. Use Memoization
+// ./Memoization.jsx
 
 export { EmailInput, EmailInputUncontrolled };

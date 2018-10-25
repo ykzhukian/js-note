@@ -5,6 +5,15 @@ import WithMouse from './ReactDoc/RenderPropWithMouse';
 import { ThemeContext, themes } from './ReactDoc/ThemeContext';
 import ThemedButton from './ReactDoc/ThemedButton';
 import Modal from './ReactDoc/PortalModal';
+import PureComponent from './ReactAd/PureComponent';
+import Memoization from './ReactAd/Memoization';
+
+const list = [
+  { id: 1, text: 'a' },
+  { id: 2, text: 'b' },
+  { id: 3, text: 'c' },
+  { id: 4, text: 'd' },
+];
 
 class App extends Component {
 
@@ -68,6 +77,10 @@ class App extends Component {
           </>
           <div>modal content</div>
         </Modal>
+        <div>PureComponent</div>
+        <PureComponent list={list} />
+        <div>Memoization</div>
+        <Memoization list={list} />
       </div>
     );
   }
