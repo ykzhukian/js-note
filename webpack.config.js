@@ -2,16 +2,18 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const extractSASS = new ExtractTextPlugin('stylesheets/[name]-[hash].css'); // 把css文件单独出来而不是用style标签放在head里
 
 module.exports = {
-  entry: [
-    path.resolve(__dirname, './src/js/index.jsx'), // 指定入口文件，程序从这里开始编译,__dirname当前所在目录, ../表示上一级目录, ./同级目录
-  ],
+  entry: {
+    app: path.resolve(__dirname, './src/js/index.jsx'), // 指定入口文件，程序从这里开始编译,__dirname当前所在目录, ../表示上一级目录, ./同级目录
+    // vendors: ['react', 'react-dom']
+  },
   output: {
     path: path.resolve(__dirname, './dist'), // 输出的路径
-    filename: 'bundle.js' // 打包后文件
+    filename: '[name].js' // 打包后文件
   },
   module: {
     rules: [
@@ -98,6 +100,21 @@ module.exports = {
       { from: 'src/data', to: 'data' },
       { from: 'src/assets', to: 'assets' },
     ]),
-    extractSASS
-  ]
+    extractSASS,
+  ],
+  // externals: { // Global libs doesn't need to bundle in every bundle
+  //   react: 'React',
+  //   'react-dom': 'ReactDOM'
+  // }
+  optimization: {
+    // now the node_modules js is an extra file, which will not change if we didn't change the dependency,
+    // then user don't need to reload these resources after we push new codes every time.
+    // https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching
+    // https://webpack.js.org/guides/code-splitting/#prevent-duplication
+    runtimeChunk: true,
+    splitChunks: {
+      chunks: 'all', // Bundle libs to vendor file instead of main output file
+    },
+    // minimizer: [new UglifyJsPlugin()], // Tree shaking using UglifyJsPlugin by default
+  }
 };

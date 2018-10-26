@@ -1,5 +1,13 @@
 {
-  "presets": ["@babel/env", "@babel/react"],
+  "presets": [
+    [
+      "@babel/preset-env", {
+        "loose": true,
+        "modules": false
+      }
+    ],
+    "@babel/react"
+  ],
   "plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-react-jsx"],
   "comments": true
 }
