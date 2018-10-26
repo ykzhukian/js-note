@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { fabric } from 'fabric'
+import React, { Component } from 'react';
+import { fabric } from 'fabric';
 
 export default class App extends Component {
 
@@ -19,8 +19,8 @@ export default class App extends Component {
       height: 20,
       angle: 45,
       selection: true
-    })
-    
+    });
+
     fcanvas.add(rect);
 
     setTimeout(() => {
@@ -28,13 +28,13 @@ export default class App extends Component {
         onChange: fcanvas.renderAll.bind(fcanvas),
         duration: 1000,
         easing: fabric.util.ease.easeInCubic
-      })
-    }, 1000)    
+      });
+    }, 1000);
   }
 
   render() {
     return (
       <canvas id="c"></canvas>
-    )
+    );
   }
 }

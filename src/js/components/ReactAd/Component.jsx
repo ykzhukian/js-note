@@ -49,8 +49,14 @@ export default class Component extends React.Component {
   // Pure function, does not modify component state, returns same result, does not directly interact with browser
   render() {
     return (
-      <div>123</div>
+      <></>
     );
   }
 
 }
+
+Component.defaultProps = {
+  color: 'blue'
+};
+
+Component.displayName = 'someOtherNameOnlyForDebugging';
