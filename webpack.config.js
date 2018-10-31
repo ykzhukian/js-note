@@ -12,7 +12,7 @@ module.exports = {
     // vendors: ['react', 'react-dom']
   },
   output: {
-    path: path.resolve(__dirname, './dist'), // 输出的路径
+    path: path.resolve(__dirname, './dist/'), // 输出的路径
     filename: '[name].js' // 打包后文件
   },
   module: {

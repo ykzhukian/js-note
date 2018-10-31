@@ -7,7 +7,7 @@ import ThemedButton from './ReactDoc/ThemedButton';
 import Modal from './ReactDoc/PortalModal';
 import PureComponent from './ReactAd/PureComponent';
 import Memoization from './ReactAd/Memoization';
-// import UseStateHook from './ReactAd/Hooks';
+import UseStateHook from './ReactAd/Hooks';
 
 const list = [
   { id: 1, text: 'a' },
@@ -82,7 +82,7 @@ class App extends Component {
         <PureComponent list={list} />
         <div>Memoization</div>
         <Memoization list={list} />
-        {/* <UseStateHook /> */}
+        <UseStateHook />
       </div>
     );
   }
