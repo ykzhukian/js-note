@@ -15,6 +15,6 @@ export default class Grid extends Component {
         <div className="item item-8"><span>8</span></div>
         <div className="item item-9"><span>9</span></div>
       </div>
-    )
+    );
   }
 }
