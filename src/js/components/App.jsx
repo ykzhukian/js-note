@@ -7,6 +7,7 @@ import ThemedButton from './ReactDoc/ThemedButton';
 import Modal from './ReactDoc/PortalModal';
 import PureComponent from './ReactAd/PureComponent';
 import Memoization from './ReactAd/Memoization';
+import './ReactTest/TestRenderer';
 // import UseStateHook from './ReactAd/Hooks';
 
 const list = [
