@@ -8,7 +8,8 @@ import Modal from './ReactDoc/PortalModal';
 import PureComponent from './ReactAd/PureComponent';
 import Memoization from './ReactAd/Memoization';
 import './ReactTest/TestRenderer';
-// import UseStateHook from './ReactAd/Hooks';
+import Canvas from './Paint/Canvas';
+import Focus from './Paint/Focus';
 
 const list = [
   { id: 1, text: 'a' },
@@ -78,12 +79,13 @@ class App extends Component {
             <div>2</div>
           </>
           <div>modal content</div>
+          <Canvas />
+          <Focus />
         </Modal>
         <div>PureComponent</div>
         <PureComponent list={list} />
         <div>Memoization</div>
         <Memoization list={list} />
-        {/* <UseStateHook /> */}
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Canvas extends React.PureComponent {
+export default class Focus extends React.PureComponent {
   constructor(props) {
     super(props);
     this.ref = React.createRef();
@@ -15,7 +15,10 @@ export default class Canvas extends React.PureComponent {
     return (
       <>
         <div>canvas</div>
-        <canvas id="myCanvas" width="578" height="200" ref={this.ref}></canvas>
+        <div>canvas</div>
+        <div>canvas</div>
+        <div>canvas</div>
+        <div>canvas</div>
       </>
     );
   }
