@@ -5,4 +5,6 @@ import App from './components/App';
 
 import '../css/application.scss';
 
+import './es6-notes';
+
 render(<App />, document.getElementById('app'));

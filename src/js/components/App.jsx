@@ -9,7 +9,6 @@ import PureComponent from './ReactAd/PureComponent';
 import Memoization from './ReactAd/Memoization';
 import './ReactTest/TestRenderer';
 import Canvas from './Paint/Canvas';
-import Focus from './Paint/Focus';
 
 const list = [
   { id: 1, text: 'a' },
@@ -80,7 +79,6 @@ class App extends Component {
           </>
           <div>modal content</div>
           <Canvas />
-          <Focus />
         </Modal>
         <div>PureComponent</div>
         <PureComponent list={list} />
