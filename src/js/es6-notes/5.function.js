@@ -50,11 +50,23 @@ export const run = () => {
 
   // 尾调用（Tail Call）是函数式编程的一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数的最后一步是调用另一个函数。
 
+  // 尾递归优化过的 Fibonacci 数列实现如下。
+  function Fibonacci2 (n , ac1 = 1 , ac2 = 1) {
+    if( n <= 1 ) {return ac2};
+  
+    return Fibonacci2 (n - 1, ac2, ac1 + ac2);
+  }
+  console.log(
+    Fibonacci2(100), // 573147844013817200000
+    Fibonacci2(1000), // 7.0330367711422765e+208
+    // Fibonacci2(10000) // Infinity
+  );
 };
 
 run();
 
 var cool = 'not cool';
+const newCool = {cool: 'cool'};
 function coolF() { console.log(this.cool) };
-coolF.bind({ cool: 'cool' })();
-coolF.call({ cool: 'cool' });
+coolF.bind(newCool)();
+coolF.call(newCool);

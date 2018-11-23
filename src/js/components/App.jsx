@@ -8,7 +8,7 @@ import Modal from './ReactDoc/PortalModal';
 import PureComponent from './ReactAd/PureComponent';
 import Memoization from './ReactAd/Memoization';
 import './ReactTest/TestRenderer';
-import Canvas from './Paint/Canvas';
+import Spotlight from './Paint/Spotlight';
 
 const list = [
   { id: 1, text: 'a' },
@@ -78,7 +78,7 @@ class App extends Component {
             <div>2</div>
           </>
           <div>modal content</div>
-          <Canvas />
+          <Spotlight />
         </Modal>
         <div>PureComponent</div>
         <PureComponent list={list} />
