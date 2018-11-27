@@ -15,7 +15,6 @@ export default class Spotlight extends React.PureComponent {
     const canvas = this.ref.current;
     const canvasTop = canvas ? canvas.getBoundingClientRect().top : -1;
     const positionX = canvasTop > 550 ? 550 : canvasTop < -550 ? -550 : canvasTop; // eslint-disable-line
-    console.log(positionX);
 
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
