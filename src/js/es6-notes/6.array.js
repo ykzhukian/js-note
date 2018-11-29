@@ -12,6 +12,8 @@ export const run = () => {
     'b',
   ];
 
+  const clone = obj => Object.assign({}, ...obj);
+
   // 替代函数的 apply 方法
   // ES5 的写法
   function f(x, y, z) {
@@ -81,6 +83,11 @@ export const run = () => {
   // ES6的写法
   let arr7 = Array.from(arrayLike); // ['a', 'b', 'c']
   console.log(arr6, arr7);
+
+  // Array.of基本上可以用来替代Array()或new Array()，并且不存在由于参数不同而导致的重载。它的行为非常统一。
+
+  // 数组实例的copyWithin方法，在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。也就是说，使用这个方法，会修改当前数组。
+  // Array.prototype.copyWithin(target, start = 0, end = this.length)
   
 
 };
