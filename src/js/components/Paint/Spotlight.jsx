@@ -27,11 +27,11 @@ export default class Spotlight extends React.PureComponent {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const grd = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grd.addColorStop(0, 'rgba(180, 180, 180, 0.1)');
-    grd.addColorStop(0.25 * dur, 'rgba(180, 180, 180, 0.5)');
-    grd.addColorStop(0.5 * dur, 'rgba(180, 180, 180, 0.1)');
-    grd.addColorStop(0.75 * dur, 'rgba(180, 180, 180, 0.5)');
-    grd.addColorStop(1, 'rgba(180, 180, 180, 0.1)');
+    grd.addColorStop(0, 'rgba(180, 180, 180, 0.0)');
+    grd.addColorStop(0.25 * dur, 'rgba(180, 180, 180, 0.4)');
+    grd.addColorStop(0.5 * dur, 'rgba(180, 180, 180, 0.0)');
+    grd.addColorStop(0.75 * dur, 'rgba(180, 180, 180, 0.4)');
+    grd.addColorStop(1, 'rgba(180, 180, 180, 0.0)');
 
     const leftPosX = canvas.width / 1.5 + positionX;
     ctx.beginPath();
