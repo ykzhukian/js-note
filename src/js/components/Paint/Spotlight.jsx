@@ -27,11 +27,18 @@ export default class Spotlight extends React.PureComponent {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const grd = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grd.addColorStop(0, 'rgba(180, 180, 180, 0.0)');
+    grd.addColorStop(0, 'rgba(180, 180, 180, 0)');
     grd.addColorStop(0.25 * dur, 'rgba(180, 180, 180, 0.4)');
-    grd.addColorStop(0.5 * dur, 'rgba(180, 180, 180, 0.0)');
+    grd.addColorStop(0.5 * dur, 'rgba(180, 180, 180, 0)');
     grd.addColorStop(0.75 * dur, 'rgba(180, 180, 180, 0.4)');
-    grd.addColorStop(1, 'rgba(180, 180, 180, 0.0)');
+    grd.addColorStop(1, 'rgba(180, 180, 180, 0)');
+
+    const grd2 = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    grd2.addColorStop(0, 'rgba(180, 180, 180, 0.4)');
+    grd2.addColorStop(0.25 * dur, 'rgba(180, 180, 180, 0)');
+    grd2.addColorStop(0.5 * dur, 'rgba(180, 180, 180, 0.4)');
+    grd2.addColorStop(0.75 * dur, 'rgba(180, 180, 180, 0)');
+    grd2.addColorStop(1, 'rgba(180, 180, 180, 0.4)');
 
     const leftPosX = canvas.width / 1.5 + positionX;
     ctx.beginPath();
@@ -46,7 +53,7 @@ export default class Spotlight extends React.PureComponent {
     ctx.moveTo(0, 0);
     ctx.lineTo(rightPosX, canvas.height);
     ctx.lineWidth = 1;
-    ctx.strokeStyle = grd;
+    ctx.strokeStyle = grd2;
     ctx.stroke();
 
     window.requestAnimationFrame(this.draw);

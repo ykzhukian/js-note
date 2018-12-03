@@ -37,7 +37,18 @@ class App extends Component {
       theme: themes.light,
       toggleTheme: this.toggleTheme,
     };
+    this.interlude = React.createRef();
   }
+
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     if (this.interlude.current) {
+  //       setInterval(() => {
+  //         this.interlude.current.classList.toggle('active');
+  //       }, 3000);
+  //     }
+  //   }, 2000);
+  // }
 
   // To enable sytax like following, you need to use @babel/plugin-proposal-class-properties
   // state = {
@@ -84,6 +95,9 @@ class App extends Component {
         <PureComponent list={list} />
         <div>Memoization</div>
         <Memoization list={list} />
+        <div className="interlude" ref={this.interlude}>
+          <span></span>
+        </div>
       </div>
     );
   }
