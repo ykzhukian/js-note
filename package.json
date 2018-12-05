@@ -30,6 +30,7 @@
     "memoize-one": "^4.0.2",
     "mocha": "^5.2.0",
     "node-sass": "^4.9.2",
+    "ramda": "^0.26.1",
     "react": "^16.7.0-alpha.0",
     "react-dom": "16.x",
     "react-test-renderer": "^16.6.0",
