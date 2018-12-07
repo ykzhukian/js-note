@@ -1,7 +1,9 @@
-import { useState, React } from 'react';
+import React, { useState } from 'react';
 
-function StateHook() {
+const StateHook = () => {
   const [count, setCount] = useState(0);
+
+  console.log(count);
 
   return (
     <div>
@@ -11,7 +13,7 @@ function StateHook() {
       </button>
     </div>
   );
-}
+};
 
 export default StateHook;
 

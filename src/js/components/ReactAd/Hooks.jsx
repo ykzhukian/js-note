@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const UseStateHook = () => {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log(count);
+  });
+
+  console.log(count);
 
   return (
     <div>

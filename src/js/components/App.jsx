@@ -9,6 +9,7 @@ import PureComponent from './ReactAd/PureComponent';
 import Memoization from './ReactAd/Memoization';
 import './ReactTest/TestRenderer';
 import Spotlight from './Paint/Spotlight';
+import StateHook from './Hooks/StateHook';
 
 const list = [
   { id: 1, text: 'a' },
@@ -83,6 +84,7 @@ class App extends Component {
         <ThemeContext.Provider value={this.state}>
           <ThemedButton />
         </ThemeContext.Provider>
+        <StateHook />
         <Modal>
           <>
             <div>1</div>
