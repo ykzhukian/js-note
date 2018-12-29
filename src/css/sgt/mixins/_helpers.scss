@@ -1,0 +1,100 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transform($string){
+  -ms-transform: #{$string};
+  -o-transform: #{$string};
+  -moz-transform: #{$string};
+  -webkit-transform: #{$string};
+  transform: #{$string};
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }  
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }  
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin border-radius($radius) {
+-webkit-border-radius: $radius;
+   -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+        border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+-webkit-box-shadow: #{$shadow};
+   -moz-box-shadow: #{$shadow};
+    -ms-box-shadow: #{$shadow};
+        box-shadow: #{$shadow};
+}
+
+@mixin clearfix {
+*zoom: 1;
+&:before,
+&:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+&:after {
+  clear: both;
+}
+}
+
+@mixin colFlex {
+-ms-flex-preferred-size: 0;
+flex-basis: 0;
+-webkit-box-flex: 1;
+-ms-flex-positive: 1;
+flex-grow: 1;
+max-width: 100%;
+}
+
+@mixin fixFlex {
+-ms-flex-positive: 1;
+flex-grow: 1;
+-ms-flex-negative: 1;
+flex-shrink: 1;
+}
+
+.flex {
+  display: flex;
+}
+
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
