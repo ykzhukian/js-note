@@ -10,6 +10,10 @@ export default class Spotlight extends React.PureComponent {
 
   componentDidMount() {
     window.requestAnimationFrame(this.draw);
+    const canvas = this.ref.current;
+    const parent = canvas.parentNode.getBoundingClientRect();
+    canvas.width = parent.width;
+    canvas.height = parent.height;
   }
 
   draw() {
@@ -17,6 +21,10 @@ export default class Spotlight extends React.PureComponent {
     const canvas = this.ref.current;
     const canvasTop = canvas ? canvas.getBoundingClientRect().top : -1;
     const positionX = canvasTop > 550 ? 550 : canvasTop < -550 ? -550 : canvasTop; // eslint-disable-line
+
+    const { reverse } = this.props;
+
+    console.log(positionX);
 
     let dur = this.dur / 1000 * 3;
 
@@ -27,32 +35,37 @@ export default class Spotlight extends React.PureComponent {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const grd = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grd.addColorStop(0, 'rgba(180, 180, 180, 0)');
-    grd.addColorStop(0.25 * dur, 'rgba(180, 180, 180, 0.4)');
-    grd.addColorStop(0.5 * dur, 'rgba(180, 180, 180, 0)');
-    grd.addColorStop(0.75 * dur, 'rgba(180, 180, 180, 0.4)');
-    grd.addColorStop(1, 'rgba(180, 180, 180, 0)');
+
+    const color1 = 'rgba(180, 180, 180, 0)';
+    const color2 = 'rgba(255, 255, 255, 0.3)';
+
+    grd.addColorStop(0, color1);
+    grd.addColorStop(0.25 * dur, color2);
+    grd.addColorStop(0.5 * dur, color1);
+    grd.addColorStop(0.75 * dur, color2);
+    grd.addColorStop(1, color1);
 
     const grd2 = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grd2.addColorStop(0, 'rgba(180, 180, 180, 0.4)');
-    grd2.addColorStop(0.25 * dur, 'rgba(180, 180, 180, 0)');
-    grd2.addColorStop(0.5 * dur, 'rgba(180, 180, 180, 0.4)');
-    grd2.addColorStop(0.75 * dur, 'rgba(180, 180, 180, 0)');
-    grd2.addColorStop(1, 'rgba(180, 180, 180, 0.4)');
+    grd2.addColorStop(0, color2);
+    grd2.addColorStop(0.25 * dur, color1);
+    grd2.addColorStop(0.5 * dur, color2);
+    grd2.addColorStop(0.75 * dur, color1);
+    grd2.addColorStop(1, color2);
 
-    const leftPosX = canvas.width / 1.5 + positionX;
+    const leftPosX = canvas.width + positionX;
     ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(leftPosX, canvas.height);
+    ctx.moveTo(reverse ? canvas.width + 20 : -20, 0);
+    ctx.lineTo(reverse ? -leftPosX : leftPosX, canvas.height);
     ctx.lineWidth = 1;
     ctx.strokeStyle = grd;
     ctx.stroke();
 
-    const rightPosX = canvas.width / 1.1 + positionX;
+    const rightPosX = canvas.width / 0.3 + positionX;
     ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(rightPosX, canvas.height);
-    ctx.lineWidth = 1;
+    ctx.moveTo(reverse ? canvas.width - 20 : 20, 0);
+    ctx.lineTo(rightPosX, reverse ? 0 : canvas.width);
+    ctx.shadowBlur = 1;
+    ctx.shadowColor = 'grey';
     ctx.strokeStyle = grd2;
     ctx.stroke();
 
@@ -61,10 +74,10 @@ export default class Spotlight extends React.PureComponent {
 
   render() {
     return (
-      <>
-        <div>canvas</div>
-        <canvas id="myCanvas" width="800" height="1500" ref={this.ref}></canvas>
-      </>
+      <div className="spotlight-bg">
+        <canvas ref={this.ref}></canvas>
+        {this.props.children}
+      </div>
     );
   }
 }

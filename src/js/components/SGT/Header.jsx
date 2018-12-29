@@ -6,7 +6,7 @@ export default class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuOpen: true,
+      menuOpen: false,
     };
     this.toggle = this.toggle.bind(this);
   }

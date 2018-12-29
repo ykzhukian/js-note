@@ -7,11 +7,13 @@
   padding: 0 30px;
   height: calc(100vh - 30px);
   overflow-y: auto;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
 #app {
   background-color: $lightgray;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -42,8 +44,10 @@
     opacity: 0;
     max-height: 0;
     overflow: hidden;
+    display: none;
     @include transition(0.3s ease);
     &.open {
+      display: block;
       opacity: 1;
       margin-top: 0;
       max-height: 100vh;
