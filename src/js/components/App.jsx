@@ -11,6 +11,8 @@ import './ReactTest/TestRenderer';
 import Spotlight from './Paint/Spotlight';
 import StateHook from './Hooks/StateHook';
 
+import PlxExample from './Others/Plx';
+
 const list = [
   { id: 1, text: 'a' },
   { id: 2, text: 'b' },
@@ -84,6 +86,7 @@ class App extends Component {
         <ThemeContext.Provider value={this.state}>
           <ThemedButton />
         </ThemeContext.Provider>
+        <PlxExample />
         <StateHook />
         <Modal>
           <>

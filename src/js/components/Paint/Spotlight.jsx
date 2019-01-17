@@ -24,8 +24,6 @@ export default class Spotlight extends React.PureComponent {
 
     const { reverse } = this.props;
 
-    console.log(positionX);
-
     let dur = this.dur / 1000 * 3;
 
     if (dur >= 2.3) this.dur = 0;
