@@ -1,61 +1,40 @@
 {
-  "name": "react-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha --require @babel/register",
-    "dev": "webpack --config webpack/webpack.config.js",
-    "start": "webpack-dev-server --hot --inline --content-base ./dist",
-    "webpack": "webpack",
-    "build": "ENVIRONMENT=production webpack --mode production -p"
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "notes",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-transform-react-jsx": "^7.0.0",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-es2015": "^7.0.0-beta.53",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "babel-loader": "^8.0.4",
-    "css-loader": "^0.28.11",
-    "d3": "^5.5.0",
-    "fabric": "^2.3.4",
-    "file-loader": "^2.0.0",
-    "memoize-one": "^4.0.2",
-    "mocha": "^5.2.0",
-    "node-sass": "^4.9.2",
-    "prop-types": "^15.6.2",
-    "ramda": "^0.26.1",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.0",
-    "react-plx": "^1.3.11",
-    "react-test-renderer": "^16.6.0",
-    "regenerator-runtime": "^0.12.1",
-    "sass-loader": "^7.0.1",
-    "style-loader": "^0.21.0",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "waterfall.js": "^1.1.0",
-    "webpack-cli": "^2.1.2",
-    "webpack-dev-server": "^3.1.3"
+    "react": "^16.9.0",
+    "react-app-rewired": "^2.1.3",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.1",
+    "sass-resources-loader": "^2.0.1",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "babel-register": "^6.26.0",
-    "copy-webpack-plugin": "^4.5.2",
-    "eslint": "^5.7.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "html-webpack-plugin": "^3.2.0",
-    "jest": "^23.6.0",
-    "webpack": "^4.6.0"
+    "@types/node": "^12.7.2",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "tslint": "^5.19.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-react": "^4.0.0"
   }
 }

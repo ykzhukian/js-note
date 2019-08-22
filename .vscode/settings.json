@@ -1,0 +1,5 @@
+{
+  "tslint.configFile": "tslint.json",
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true,
+}
