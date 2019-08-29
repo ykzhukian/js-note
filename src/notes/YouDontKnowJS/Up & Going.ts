@@ -69,6 +69,10 @@ export const run = () => {
     console.log(a);
   }
   transpiling(1);
+
+  // The JS engine compiles your code right before (and sometimes during!) execution.
+  // So we use some deeper understanding of the compiler's approach to our code to understand
+  // how it finds and deals with variable and function declarations.
 }
 
 run();

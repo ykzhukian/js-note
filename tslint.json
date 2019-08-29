@@ -9,6 +9,7 @@
     "ter-arrow-parens": false,
     "semicolon": false,
     "jsx-no-lambda": false,
+    "max-line-length": false,
     "trailing-comma": [
       true,
       {
