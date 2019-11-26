@@ -5,7 +5,7 @@ export default class DatGui extends React.Component {
   gui = new dat.GUI();
   state = {
     name: 'Sam',
-  };
+  }
 
   componentDidMount() {
     this.gui.addFolder('flow field');
